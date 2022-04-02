@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F7ECDDB27F764DA00968A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECDDA27F764DA00968A78 /* AppDelegate.swift */; };
 		0F7ECDDD27F764DA00968A78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECDDC27F764DA00968A78 /* SceneDelegate.swift */; };
-		0F7ECDDF27F764DA00968A78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECDDE27F764DA00968A78 /* ViewController.swift */; };
+		0F7ECDDF27F764DA00968A78 /* PwnedCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECDDE27F764DA00968A78 /* PwnedCheckViewController.swift */; };
 		0F7ECDE227F764DA00968A78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7ECDE027F764DA00968A78 /* Main.storyboard */; };
 		0F7ECDE527F764DA00968A78 /* PwnedChecker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECDE327F764DA00968A78 /* PwnedChecker.xcdatamodeld */; };
 		0F7ECDE727F764DA00968A78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7ECDE627F764DA00968A78 /* Assets.xcassets */; };
@@ -17,6 +17,10 @@
 		0F7ECDF527F764DB00968A78 /* PwnedCheckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECDF427F764DB00968A78 /* PwnedCheckerTests.swift */; };
 		0F7ECDFF27F764DB00968A78 /* PwnedCheckerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECDFE27F764DB00968A78 /* PwnedCheckerUITests.swift */; };
 		0F7ECE0127F764DB00968A78 /* PwnedCheckerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECE0027F764DB00968A78 /* PwnedCheckerUITestsLaunchTests.swift */; };
+		0F7ECE0E27F7659F00968A78 /* HIBPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECE0D27F7659F00968A78 /* HIBPAPI.swift */; };
+		0F7ECE1027F7757C00968A78 /* PwnedChecker-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7ECE0F27F7757C00968A78 /* PwnedChecker-Info.plist */; };
+		0F7ECE1227F78A7700968A78 /* BreachStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECE1127F78A7700968A78 /* BreachStore.swift */; };
+		0F7ECE1427F8AA6A00968A78 /* Breach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7ECE1327F8AA6A00968A78 /* Breach.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +44,7 @@
 		0F7ECDD727F764DA00968A78 /* PwnedChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PwnedChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7ECDDA27F764DA00968A78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F7ECDDC27F764DA00968A78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0F7ECDDE27F764DA00968A78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F7ECDDE27F764DA00968A78 /* PwnedCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwnedCheckViewController.swift; sourceTree = "<group>"; };
 		0F7ECDE127F764DA00968A78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F7ECDE427F764DA00968A78 /* PwnedChecker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PwnedChecker.xcdatamodel; sourceTree = "<group>"; };
 		0F7ECDE627F764DA00968A78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +55,10 @@
 		0F7ECDFA27F764DB00968A78 /* PwnedCheckerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PwnedCheckerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7ECDFE27F764DB00968A78 /* PwnedCheckerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwnedCheckerUITests.swift; sourceTree = "<group>"; };
 		0F7ECE0027F764DB00968A78 /* PwnedCheckerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwnedCheckerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0F7ECE0D27F7659F00968A78 /* HIBPAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIBPAPI.swift; sourceTree = "<group>"; };
+		0F7ECE0F27F7757C00968A78 /* PwnedChecker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PwnedChecker-Info.plist"; sourceTree = "<group>"; };
+		0F7ECE1127F78A7700968A78 /* BreachStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreachStore.swift; sourceTree = "<group>"; };
+		0F7ECE1327F8AA6A00968A78 /* Breach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breach.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +111,16 @@
 			children = (
 				0F7ECDDA27F764DA00968A78 /* AppDelegate.swift */,
 				0F7ECDDC27F764DA00968A78 /* SceneDelegate.swift */,
-				0F7ECDDE27F764DA00968A78 /* ViewController.swift */,
+				0F7ECDDE27F764DA00968A78 /* PwnedCheckViewController.swift */,
 				0F7ECDE027F764DA00968A78 /* Main.storyboard */,
 				0F7ECDE627F764DA00968A78 /* Assets.xcassets */,
 				0F7ECDE827F764DA00968A78 /* LaunchScreen.storyboard */,
 				0F7ECDEB27F764DA00968A78 /* Info.plist */,
 				0F7ECDE327F764DA00968A78 /* PwnedChecker.xcdatamodeld */,
+				0F7ECE0D27F7659F00968A78 /* HIBPAPI.swift */,
+				0F7ECE1327F8AA6A00968A78 /* Breach.swift */,
+				0F7ECE1127F78A7700968A78 /* BreachStore.swift */,
+				0F7ECE0F27F7757C00968A78 /* PwnedChecker-Info.plist */,
 			);
 			path = PwnedChecker;
 			sourceTree = "<group>";
@@ -193,6 +205,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
@@ -235,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F7ECDEA27F764DA00968A78 /* LaunchScreen.storyboard in Resources */,
+				0F7ECE1027F7757C00968A78 /* PwnedChecker-Info.plist in Resources */,
 				0F7ECDE727F764DA00968A78 /* Assets.xcassets in Resources */,
 				0F7ECDE227F764DA00968A78 /* Main.storyboard in Resources */,
 			);
@@ -261,9 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F7ECE0E27F7659F00968A78 /* HIBPAPI.swift in Sources */,
 				0F7ECDE527F764DA00968A78 /* PwnedChecker.xcdatamodeld in Sources */,
-				0F7ECDDF27F764DA00968A78 /* ViewController.swift in Sources */,
+				0F7ECDDF27F764DA00968A78 /* PwnedCheckViewController.swift in Sources */,
+				0F7ECE1427F8AA6A00968A78 /* Breach.swift in Sources */,
 				0F7ECDDB27F764DA00968A78 /* AppDelegate.swift in Sources */,
+				0F7ECE1227F78A7700968A78 /* BreachStore.swift in Sources */,
 				0F7ECDDD27F764DA00968A78 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
