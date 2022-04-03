@@ -31,28 +31,32 @@ class PwnedCheckViewController: UIViewController,UITextFieldDelegate {
 				switch breachResult {
 				case let .success(breaches):
 					self.store.breaches = breaches
-					print("There are \(breaches.count) breaches")
+				
 					
-						
+						/*
 					for breach in self.store.breaches {
 						print (breach.name)
-					}
+					}*/
 					if self.store.breaches.count > 0 {
 						self.errorLabel.text = "You have been pwned \(self.store.breaches.count) times!"
 						
 					} else {
 						self.errorLabel.text = "This account is safe"
 					}
-					self.errorLabel.textColor = UIColor.black
-					self.errorLabel.isHidden = false
+					
 										
 				case let .failure(error):
 					print("Error retrieving results:  \(error)")
+					self.errorLabel.text = "This account is safe"
+
+					
 				}
+				self.errorLabel.textColor = UIColor.black
+				self.errorLabel.isHidden = false
 			}
 			
 			
-			print("Store has \(self.store.breaches.count) entries")
+			
 		} else {
 			self.errorLabel.text = "Invalid Address!"
 			self.errorLabel.textColor = UIColor.red

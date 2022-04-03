@@ -53,6 +53,8 @@ class BreachStore {
 		
 		let task = session.dataTask(with: request) {
 			(data, response, error) in
+			let str = String(decoding: data!, as: UTF8.self)
+			print (str)
 			let result = self.processBreachRequest(data: data, error: error)
 			OperationQueue.main.addOperation {
 				completion(result)

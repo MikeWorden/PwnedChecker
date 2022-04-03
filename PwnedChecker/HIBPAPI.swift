@@ -71,7 +71,7 @@ struct HIBPdAPI {
 			dateFormatter.dateFormat = "yyyy-MM-dd"
 			dateFormatter.locale = Locale(identifier: "en_US_POSIX")
 			dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-			//decoder.dateDecodingStrategy = .formatted(dateFormatter)
+			
 			decoder.dateDecodingStrategy = .custom { decoder in
 				let container = try decoder.singleValueContainer()
 				let dateString = try container.decode(String.self)
@@ -88,10 +88,10 @@ struct HIBPdAPI {
 													   debugDescription: "Cannot decode date string \(dateString)")
 			}
 			// Debug print for analyzing JSON returns
-			/*if let jsonString = String(data: data,
+			if let jsonString = String(data: data,
 									   encoding: .utf8) {
 				print(jsonString)
-			}*/
+			}
 			let breaches = try decoder.decode([Breach].self, from: data)
 			print(breaches.count)
 			return .success(breaches)
