@@ -87,16 +87,13 @@ struct HIBPdAPI {
 				throw DecodingError.dataCorruptedError(in: container,
 													   debugDescription: "Cannot decode date string \(dateString)")
 			}
-			// Debug print
-			if let jsonString = String(data: data,
+			// Debug print for analyzing JSON returns
+			/*if let jsonString = String(data: data,
 									   encoding: .utf8) {
 				print(jsonString)
-			}
+			}*/
 			let breaches = try decoder.decode([Breach].self, from: data)
 			print(breaches.count)
-			for  breach in breaches {
-				print(breach.name)
-			}
 			return .success(breaches)
 			
 			

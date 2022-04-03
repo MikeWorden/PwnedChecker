@@ -6,16 +6,21 @@
 //
 
 import Foundation
+import UIKit
 
 class BreachStore {
+	
+	var breaches: [Breach] = []
+	var addressToCheck: String = ""
+	
 	private let session:  URLSession = {
 		var apiKey: String {
 		  get {
-			// 1
+			
 			guard let filePath = Bundle.main.path(forResource: "PwnedChecker-Info", ofType: "plist") else {
 			  fatalError("Couldn't find file 'PwnedChecker-Info.plist'.")
 			}
-			// 2
+			
 			let plist = NSDictionary(contentsOfFile: filePath)
 		
 			guard let value = plist?.object(forKey: "API_KEY") as? String else {
@@ -42,15 +47,26 @@ class BreachStore {
 
 	
 	
-	func fetchAccountBreachInfo() {
-		let url = HIBPdAPI.accountBreachURL(emailAccount: "wordenm@icloud.com")
+	func fetchAccountBreachInfodata(completion: @escaping (Result<[Breach], Error>) -> Void){
+		let url = HIBPdAPI.accountBreachURL(emailAccount: self.addressToCheck)
 		let request = URLRequest(url: url)
 		
 		let task = session.dataTask(with: request) {
 			(data, response, error) in
-			let _ = self.processBreachRequest(data: data, error: error)
-			
+			let result = self.processBreachRequest(data: data, error: error)
+			OperationQueue.main.addOperation {
+				completion(result)
+			}
 		}
 		task.resume()
+	}
+	
+	
+	func isValidEmail() -> Bool {
+		
+		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+		let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+		return emailPred.evaluate(with: self.addressToCheck)
 	}
 }

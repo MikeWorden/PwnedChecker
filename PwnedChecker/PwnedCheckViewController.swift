@@ -7,36 +7,84 @@
 
 import UIKit
 
-class PwnedCheckViewController: UITableViewController {
-
+class PwnedCheckViewController: UIViewController,UITextFieldDelegate {
+	
+	
+	
 	
 	var store: BreachStore!
+	@IBOutlet weak var addressToCheck: UITextField!
+	@IBOutlet weak var errorLabel: UILabel!
 	
 	
 	
-	@IBOutlet var messageLabel: UILabel!
+	@IBAction func checkAddress(_ sender: Any) {
+			
+		store = BreachStore()
+		
+		store.addressToCheck = addressToCheck.text!
+		
+		
+		if store.isValidEmail() {
+			store.fetchAccountBreachInfodata{
+				(breachResult) in
+				switch breachResult {
+				case let .success(breaches):
+					self.store.breaches = breaches
+					print("There are \(breaches.count) breaches")
+					
+						
+					for breach in self.store.breaches {
+						print (breach.name)
+					}
+					if self.store.breaches.count > 0 {
+						self.errorLabel.text = "You have been pwned \(self.store.breaches.count) times!"
+						
+					} else {
+						self.errorLabel.text = "This account is safe"
+					}
+					self.errorLabel.textColor = UIColor.black
+					self.errorLabel.isHidden = false
+										
+				case let .failure(error):
+					print("Error retrieving results:  \(error)")
+				}
+			}
+			
+			
+			print("Store has \(self.store.breaches.count) entries")
+		} else {
+			self.errorLabel.text = "Invalid Address!"
+			self.errorLabel.textColor = UIColor.red
+			self.errorLabel.isHidden = false
+		}
+		
+		
+	}
 	
-	@IBOutlet var activityIndicatorView: UIActivityIndicatorView!
+	@IBAction func addressChanged(_ sender: Any) {
+		errorLabel.textColor = self.view.backgroundColor
+		errorLabel.text = "Invalid Address!"
+		
+	}
+
+
+
+	
+	
+	
+	
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		store.fetchAccountBreachInfo()
+		
+		
 	}
+	
+	
 
-	override func tableView(_ tableView: UITableView,
-								commit editingStyle: UITableViewCell.EditingStyle,
-								forRowAt indexPath: IndexPath) {
-	}
-	
-	override func tableView(_ tableView: UITableView,
-							moveRowAt sourceIndexPath: IndexPath,
-							to destinationIndexPath: IndexPath) {}
-	
-	override func tableView(_ tableView: UITableView,
-				numberOfRowsInSection section: Int) -> Int {
-		return 0
-	}
 
 }
 
